@@ -1,37 +1,35 @@
 $(document).ready(function () {
-    // Shuffle Words
     $.getJSON('./words.json', function (data) {
-        const words = data.words;
-        let wordIndex = 0;
+        const wd = data.words;
+        let wdIdx = 0;
 
-        function updateWord() {
-            const wordElement = $('#words');
-            wordElement.fadeOut(500, function () {
-                wordElement.text(words[wordIndex]);
-                wordElement.fadeIn(500);
+        function updateWd() {
+            const wdEl = $('#words');
+            wdEl.fadeOut(500, function () {
+                wdEl.text(wd[wdIdx]);
+                wdEl.fadeIn(500);
             });
 
-            wordIndex = (wordIndex + 1) % words.length;
+            wdIdx = (wdIdx + 1) % wd.length;
         }
 
-        setInterval(updateWord, 3000);
+        setInterval(updateWd, 3000);
     });
 
-    // Shuffle Locations
     $.getJSON('./locations.json', function (data) {
-        const locations = data.locations;
-        let locationIndex = 0;
+        const locs = data.locations;
+        let locIdx = 0;
 
-        function updateLocation() {
-            const locationElement = $('#location');
-            locationElement.fadeOut(500, function () {
-                locationElement.text(locations[locationIndex]);
-                locationElement.fadeIn(500);
+        function updateLoc() {
+            const locEl = $('#location');
+            locEl.fadeOut(500, function () {
+                locEl.text(locs[locIdx]);
+                locEl.fadeIn(500);
             });
 
-            locationIndex = (locationIndex + 1) % locations.length;
+            locIdx = (locIdx + 1) % locs.length;
         }
 
-        setInterval(updateLocation, 3000);
+        setInterval(updateLoc, 3000);
     });
 });

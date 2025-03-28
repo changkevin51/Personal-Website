@@ -4,7 +4,7 @@
     --link-color: #3aafa9;
     --accent: #d4d4d4;
     --snowflake-color: black; /* Default color */
-
+    --xmas-accent: #ff5151;
 }
 
 .darkmode {
@@ -31,9 +31,6 @@
     
 }
 
-
-
-
 body {
     background-color: var(--bgc);
     background: var(—bgc);
@@ -41,11 +38,10 @@ body {
 }
 
 .links-container a {
-    margin-right: 20px; /* Adjust the value as needed */
+    margin-right: 20px; 
     margin-left: -5px;
 }
 
-/* To avoid margin on the last item */
 .links-container a:last-child {
     margin-right: 0;
 }
@@ -158,12 +154,44 @@ h2.title {
     cursor: pointer;
 }
 
-#theme-switch svg {
-    fill: var(--text-color)
+#xmas-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50px;
+    right: 110px;
+    cursor: pointer;
 }
 
-#theme-switch svg:last-child {
+#xmas-switch svg {
+    fill: var(--text-color);
+}
+
+#xmas-switch svg:last-child {
     display: none;
+}
+
+.xmas-mode #xmas-switch {
+    background-color: var(--xmas-accent);
+}
+
+.xmas-mode #xmas-switch svg:first-child {
+    display: none;
+}
+
+.xmas-mode #xmas-switch svg:last-child {
+    display: block;
+}
+
+#theme-switch svg {
+    fill: var(--text-color)
 }
 
 .darkmode #theme-switch svg:first-child {
@@ -174,7 +202,10 @@ h2.title {
     display: block;
 }
 
-/* Add this to your style.css */
+#theme-switch svg:last-child {
+    display: none;
+}
+
 img {
     pointer-events: none;
 }
@@ -200,7 +231,20 @@ img {
     animation: fade-in 1.5s ease-out;
 }
 
-#arrow span {
+#xmas-arrow {
+    position: fixed;
+    top: 10px; 
+    right: 88px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Questrial", sans-serif;
+    color: var(--text-color);
+    z-index: 1000;
+    animation: fade-in 1.5s ease-out;
+}
+
+#arrow span, #xmas-arrow span {
     background-color: var(--accent);
     padding: 5px 10px;
     border-radius: 5px;
@@ -216,7 +260,6 @@ img {
     border-top: 8px solid var(--accent);
     margin-top: -2px;
 }
-
 
 /* Fade-in animation for the arrow */
 @keyframes fade-in {
@@ -285,20 +328,32 @@ body.darkmode a:hover {
     top: 60px;
     width: 70%; 
     height: 100px; 
-    display: block;
     margin: 10px; 
-    margin-left: -10px;
+    margin-left: -18px;
     pointer-events: none; 
     transform: rotate(-20deg);
     z-index: -1;
+    visibility: hidden; 
+    opacity: 0;
+}
+
+.xmas-element {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.xmas-mode .xmas-element {
+    visibility: visible;
+    opacity: 1;
 }
 
 #christmas-tree {
-    position: fixed; /* Keeps it fixed in the viewport */
-    bottom: 10px; /* Adjusts distance from the bottom */
-    right: 20px; /* Adjusts distance from the right */
-    width: 170px; /* Adjust the size of the tree */
-    height: auto; /* Maintains aspect ratio */
-    z-index: 1000; /* Ensures it stays above other elements */
-    pointer-events: none; /* Makes it unclickable */
+    position: fixed; 
+    bottom: 10px; 
+    right: 20px; 
+    width: 170px; 
+    height: auto; 
+    z-index: 1000; 
+    pointer-events: none; 
 }

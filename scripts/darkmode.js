@@ -1,19 +1,19 @@
-let darkmode = localStorage.getItem('darkmode');
-const themeSwitch = document.getElementById('theme-switch');
+let dm = localStorage.getItem('darkmode');
+const themeBtn = document.getElementById('theme-switch');
 
-const enableDarkmode = () => {
+const enableDM = () => {
     document.body.classList.add('darkmode');
     localStorage.setItem('darkmode', 'active');
 }
 
-const disableDarkmode = () => {
+const disableDM = () => {
     document.body.classList.remove('darkmode');
     localStorage.setItem('darkmode', 'none');
 }
 
-if (darkmode === 'active') enableDarkmode();
+if (dm === 'active') enableDM();
 
-themeSwitch.addEventListener('click', () => {
-    darkmode = localStorage.getItem('darkmode');
-    darkmode !== 'active' ? enableDarkmode() : disableDarkmode();
+themeBtn.addEventListener('click', () => {
+    dm = localStorage.getItem('darkmode');
+    dm !== 'active' ? enableDM() : disableDM();
 });
