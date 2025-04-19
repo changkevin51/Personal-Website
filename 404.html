@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
 
-    <title>Kevin</title>
+    <title>404 - Page Not Found</title>
 
-    <meta name="description" content="Kevin Chang. Grade 11 student at Merivale High School, Ottawa, Ontario, Canada. Loves Badminton and Piano.">
+    <meta name="description" content="Page not found - Kevin Chang's personal website">
     <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="./image/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -24,13 +24,78 @@
     
     <!-- SCRIPTS -->
     <script type="text/javascript" src="./scripts/darkmode.js" defer></script>
-    <script type="text/javascript" src="./scripts/textshuffle.js" defer></script>
-    <script type="text/javascript" src="./scripts/imageshuffle.js" defer></script>
     <script type="text/javascript" src="./scripts/xmasmode.js" defer></script>
 
     <style>
-        body.dark-mode a {
-            color: #ADD8E6; 
+        .error-container {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .error-image {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .error-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .error-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .error-message {
+            font-size: 18px;
+            font-family: "Questrial", sans-serif;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--accent);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: "Maven Pro", sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .home-button:hover {
+            background-color: var(--link-color);
+            color: white !important;
+            transform: translateY(-2px);
+            text-decoration: none !important;
+        }
+
+        body.darkmode a.home-button:hover {
+            color: white !important;
+        }
+        
+        body.xmas-mode .error-image {
+            border: 4px solid #ff5151;
+            box-shadow: 0 0 15px rgba(255,81,81,0.6);
+        }
+
+        .snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; 
+            z-index: 1000;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -48,139 +113,81 @@
             
             <?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 79.4 122.88" height="26px" viewBox="0 0 24 24" width="26px" style="enable-background:new 0 0 79.4 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path class="st0" d="M0,105.48l4.96-6.33c0.14,0.11,0.28,0.22,0.43,0.32c3.19,2.3,6.81,2.88,10.36,1.99c2.42-0.61,4.8-1.9,6.97-3.8 c0.83,0.66,1.88,1.06,3.03,1.06c1.98,0,3.68-1.18,4.44-2.88c2.55,0.57,5.19,0.93,7.67,0.84c3.86-0.15,7.31-1.36,9.47-4.49 c0.87,1.29,2.35,2.14,4.03,2.14c1.86,0,3.48-1.05,4.3-2.58c1.52-0.18,2.97-0.53,4.25-1.06c2.23-0.91,3.97-2.36,4.74-4.33 c0.02-0.06,0.04-0.12,0.07-0.18l14.71,19.29H44.42v17.4h-9.44v-17.4H0L0,105.48z M6.71,96.92l16.91-21.59H4.45l6.37-8.14 c0.06,0.05,0.13,0.1,0.2,0.14c2.84,1.71,5.66,2.35,8.44,2.15c2.16-0.15,4.28-0.8,6.37-1.83c0.71,1.81,2.47,3.08,4.53,3.08 c2.09,0,3.86-1.31,4.55-3.16c0.57-0.05,1.14-0.13,1.72-0.24c2.25-0.41,4.56-1.23,6.9-2.64c0.87,0.8,2.03,1.29,3.3,1.29 c1.94,0,3.61-1.14,4.39-2.78c2.13,0.56,4.28,0.95,6.28,1.08c3.05,0.2,5.81-0.2,7.78-1.47l9.44,12.5H56.42l6.13,8.03 c-0.2,0.24-0.33,0.55-0.34,0.88c-0.01,0.39-0.09,0.76-0.22,1.1c-0.46,1.18-1.63,2.1-3.17,2.73c-0.81,0.33-1.7,0.58-2.65,0.74 c-0.32-2.37-2.36-4.2-4.82-4.2c-2.2,0-4.05,1.46-4.65,3.46c-0.36,0.14-0.66,0.42-0.81,0.81c-1.39,3.54-4.51,4.83-8.13,4.97 c-2.29,0.09-4.8-0.27-7.22-0.84c-0.4-2.28-2.39-4.01-4.79-4.01c-2.68,0-4.86,2.18-4.86,4.86c0,0.5,0.08,0.99,0.22,1.45 c-1.89,1.72-3.95,2.88-6.03,3.4c-2.76,0.69-5.57,0.24-8.03-1.54C6.93,97.09,6.82,97.01,6.71,96.92L6.71,96.92z M12.58,64.96 L28.45,44.7H16.6l8.22-8.41l0.01,0.01l0.03,0.03l0.02,0.02l0.02,0.02l0.03,0.03l0.01,0.01l0.04,0.04l0.01,0.01l0.04,0.04l0,0 l0.04,0.04l0.01,0.01l0.03,0.03l0.02,0.02l0.03,0.03l0.02,0.02l0.02,0.02l0.03,0.03l0.01,0.01l0.04,0.04l0,0l0.04,0.04l0,0.01 l0.04,0.04l0.01,0.01l0.03,0.03l0.02,0.02l0.02,0.02l0.03,0.03l0.02,0.01l0.04,0.04l0.01,0.01l0.04,0.04l0,0l0.04,0.04l0.01,0.01 l0.04,0.03l0.02,0.02l0.03,0.03l0.02,0.02l0.02,0.02l0.03,0.03l0.01,0.01l0.04,0.04l0,0l0.05,0.04l0,0l0.04,0.04l0.01,0.01 l0.03,0.03l0.02,0.02l0.03,0.02l0.03,0.03l0.02,0.02l0.04,0.03l0.01,0.01l0.05,0.04l0,0l0.05,0.04l0.01,0.01l0.04,0.03l0.02,0.01 l0.03,0.03l0.03,0.02l0.02,0.02l0.03,0.03l0.01,0.01l0.04,0.03l0.01,0l0.05,0.04l0,0l0.05,0.04l0.01,0.01l0.04,0.03l0.02,0.02 L26.69,38l0.03,0.02l0.02,0.02l0.04,0.03l0.01,0.01l0.05,0.04l0,0l0.05,0.04l0.01,0.01l0.04,0.03l0.02,0.01l0.04,0.03l0.03,0.02 l0.03,0.02l0.03,0.03l0.02,0.01l0.04,0.03l0.01,0.01l0.05,0.04l0,0l0.05,0.04l0.01,0.01l0.04,0.03l0.02,0.01l0.03,0.02l0.03,0.02 l0.02,0.02l0.04,0.03l0.01,0.01l0.05,0.03l0,0l0.05,0.04l0.01,0l0.05,0.03l0.02,0.01l0.04,0.03l0.02,0.02l0.03,0.02l0.03,0.02 l0.02,0.01l0.04,0.03l0.01,0.01l0.05,0.03c2.09,1.33,4.61,2.31,7.28,2.88c0.69,1.85,2.47,3.17,4.56,3.17 c1.95,0,3.63-1.15,4.41-2.81c3.29-0.45,6.38-1.59,8.75-3.49l0.04-0.03l0.01-0.01l0.03-0.02l0.02-0.02L53,38.51l0.03-0.02l0.01-0.01 l0.04-0.03l0,0l0.04-0.03l0.01-0.01l0.03-0.02l0.02-0.02l0.02-0.01l0.03-0.03l0.01-0.01l0.04-0.03l0,0l0.03-0.03l0.01-0.01 l0.02-0.02l0.02-0.02l0.01-0.01l0.03-0.03l0,0l0.04-0.03l0.01-0.01l0.03-0.03l0.02-0.01l0.02-0.02l0.02-0.02l0.01-0.01l0.03-0.03 l0,0l0.04-0.03l0.01-0.01l0.03-0.03l0.02-0.02l0.02-0.02l0.03-0.03l0.01-0.01l0.04-0.03h0l0.04-0.03l0.01-0.01l0.03-0.03l0.02-0.02 l0.02-0.02l0.03-0.03l0.01-0.01l0.03-0.04l0,0l0.03-0.03L54,37.6l0.02-0.02l0.02-0.02l0.02-0.02l0.03-0.03l0.01-0.01l0.03-0.04l0,0 l0.03-0.03l0.01-0.01l0.02-0.02l0.02-0.02l0.01-0.01l0.03-0.03l0,0l0.03-0.04l0.01-0.01l0.03-0.03l0.01-0.02l0.02-0.02l0.02-0.02 l0.01-0.01l0.03-0.03l0,0l0.03-0.04l0.01-0.01l0.03-0.03l0.02-0.02l0.02-0.02L54.55,37l0.01-0.01l0.03-0.04l0,0l0.03-0.04 l0.01-0.01l0.02-0.03l0.02-0.02l0.02-0.02l0.02-0.03l0.01-0.01l0.03-0.04l0,0l0.03-0.04l0.01-0.01l0.02-0.03l0.03-0.04l0.03-0.03 l0.01-0.01l0.03-0.04l0,0l0.03-0.04l0.01-0.01l0.02-0.03L55,36.45l0.03-0.04l0,0l0.03-0.04l0-0.01l0.03-0.03l8.15,8.37H51.61 l11.98,15.86c-1.41,0.82-3.5,1.06-5.89,0.91c-1.91-0.12-3.99-0.51-6.05-1.07c-0.36-2.33-2.37-4.12-4.8-4.12 c-2.68,0-4.86,2.18-4.86,4.86c0,0.39,0.05,0.76,0.13,1.12c-2.04,1.23-4.04,1.95-5.97,2.3c-0.35,0.06-0.71,0.12-1.06,0.16 c-0.52-2.12-2.44-3.69-4.72-3.69c-2.22,0-4.09,1.48-4.67,3.51c-2.14,1.2-4.28,1.97-6.42,2.12C17.09,66.81,14.86,66.31,12.58,64.96 L12.58,64.96z M26.81,34.25l11.45-11.73l-6.78,3.76l1.43-9.76l-6.71-6.49l9.61-1.29L40.03,0l4.08,8.89l9.74,1.15l-7.26,6.35 l1.98,9.89l-7.09-3.93l11.6,11.91l-0.01,0.01l-0.02,0.03l-0.01,0.01l-0.02,0.03l-0.01,0.01L53,34.38l-0.01,0.01l-0.02,0.02 l-0.01,0.02l-0.01,0.02l-0.01,0.02l-0.01,0.02l-0.02,0.02l-0.01,0.02l-0.02,0.02l-0.01,0.01l-0.03,0.04l-0.02,0.03l-0.01,0.01 l-0.05,0.07l-0.03,0.03l0,0l-0.03,0.04l0,0l-0.03,0.03l0,0l-0.03,0.03l0,0.01l-0.02,0.03l-0.01,0.01l-0.02,0.03l-0.01,0.01 l-0.02,0.03l-0.03,0.04l-0.01,0.01l-0.02,0.02l-0.01,0.02l-0.02,0.02l-0.02,0.02l-0.01,0.02l-0.02,0.02l-0.01,0.01l-0.02,0.02 l-0.01,0.01l-0.02,0.02l-0.01,0.01l-0.02,0.03l-0.01,0.01l-0.03,0.03l-0.03,0.03l0,0l-0.06,0.07l0,0l-0.03,0.03l0,0l-0.03,0.03 l-0.01,0.01l-0.03,0.03l-0.01,0.01l-0.02,0.03l-0.01,0.01l-0.02,0.02l-0.01,0.01l-0.02,0.02l-0.01,0.01l-0.02,0.02l-0.03,0.03 l-0.02,0.02l-0.01,0.01l-0.02,0.02L51.9,35.7l-0.02,0.02l-0.01,0.01l-0.02,0.02l-0.01,0.01l-0.03,0.03l-0.01,0.01l-0.03,0.03l0,0 l-0.03,0.03l0,0l-0.03,0.03l0,0l-0.03,0.03l0,0l-0.03,0.03l0,0l-0.03,0.03l-0.01,0.01l-0.03,0.03l-0.01,0.01l-0.03,0.02l-0.01,0.01 l-0.02,0.02l-0.01,0.01l-0.02,0.02l-0.01,0.01l-0.02,0.02l-0.02,0.01l-0.02,0.02l-0.02,0.02l-0.02,0.01l-0.02,0.02l-0.01,0.01 l-0.02,0.02l-0.01,0.01l-0.03,0.02l-0.01,0.01l-0.03,0.02l-0.01,0.01l-0.03,0.03l0,0l-0.03,0.03l0,0l-0.04,0.03 c-1.78,1.43-4.08,2.34-6.6,2.78c-0.41-2.27-2.4-3.99-4.78-3.99c-2.25,0-4.15,1.53-4.7,3.61c-2.06-0.51-3.99-1.3-5.62-2.33 l-0.05-0.03l-0.01,0l-0.04-0.03l-0.01-0.01l-0.04-0.02l-0.02-0.01l-0.03-0.02l-0.02-0.01l-0.03-0.02l-0.02-0.02l-0.02-0.01 l-0.03-0.02l-0.02-0.01l-0.03-0.02l-0.01-0.01l-0.04-0.03l-0.01,0l-0.04-0.03l0,0l-0.05-0.03l0,0l-0.04-0.03l-0.01-0.01l-0.04-0.03 l-0.01-0.01l-0.03-0.02l-0.02-0.01l-0.03-0.02l-0.02-0.02l-0.02-0.02l-0.03-0.02l-0.02-0.01l-0.03-0.02L28.6,35.9l-0.04-0.03 l-0.01-0.01l-0.04-0.03l0,0l-0.04-0.03l0,0l-0.04-0.03l-0.01,0l-0.04-0.03l-0.01-0.01l-0.03-0.02l-0.02-0.01l-0.03-0.02l-0.02-0.02 l-0.02-0.02l-0.02-0.02l-0.02-0.01l-0.03-0.02l-0.01-0.01l-0.03-0.03l-0.01-0.01l-0.04-0.03l0,0l-0.04-0.03l0,0L28,35.43l0,0 l-0.04-0.03l-0.01-0.01l-0.03-0.03l-0.04-0.03l-0.02-0.02l-0.02-0.02l-0.02-0.02l-0.02-0.02l-0.03-0.02l-0.01-0.01l-0.03-0.03 l-0.01-0.01l-0.03-0.03l-0.01,0l-0.04-0.03l0,0l-0.04-0.04l0,0l-0.04-0.03l-0.01-0.01L27.53,35l-0.01-0.01l-0.03-0.03l-0.02-0.01 l-0.02-0.02l-0.02-0.02l-0.02-0.02l-0.02-0.02l-0.01-0.01l-0.03-0.03l-0.01-0.01l-0.03-0.03l-0.01-0.01l-0.03-0.03l0,0l-0.04-0.04 l0,0l-0.03-0.04l-0.01-0.01l-0.03-0.03l-0.01-0.01l-0.03-0.03l-0.01-0.01l-0.02-0.02l-0.02-0.02l-0.02-0.02l-0.02-0.02l-0.01-0.02 l-0.02-0.03l-0.01-0.01l-0.03-0.03l-0.01-0.01l-0.03-0.03l0,0l-0.03-0.04l0,0l-0.03-0.04l0,0L26.81,34.25L26.81,34.25z"/></g></svg>
         </button>
-        <!-- <div id="arrow">
-            <span>Dark mode?</span>
-            <div class="arrow"></div>
-        </div> -->
         <div id="xmas-arrow">
             <span>Christmas mode?</span>
             <div class="arrow"></div>
         </div>
     </header>
     
-
     <div class="middle-column">
-        <div class="middle-column">
+        <div class="error-container">
+            <img src="image/zenitsu404.png" alt="404 Error - Page not found" class="error-image">
+            <h1 class="error-title">Oops! Page Not Found</h1>
+            <p class="error-message">The page you're looking for seems to have disappeared faster than Zenitsu runs from demons!</p>
+            <a href="index.html" class="home-button">Return to Home</a>
         </div>
-        <div class="pfp">
-            <a href="Profile Picture">
-                <img src="image/Zenitsu derp.jpg" alt="Profile picture" id="pfp">
-            </a>
-            <h1 id="Profile picture">Kevin Chang</h1>
-            <div class="links-container">
-                <a href="https://github.com/changkevin51" class="link" target="_blank">GitHub</a>
-                <a href="https://www.instagram.com/d0ntmindme1/" class="link" target="_blank">Instagram</a>
-            </div>
-        </div>        
-        <div>
-            <h2 class="title">Who I am</h2>
-            <ul>
-                <li>High school student at Merivale High School (IB)</li>
-                <li>I live in <span id="location">Ottawa</span></li>
-                <li>Love <span id="words">Badminton</span></li>
-            </ul>
-        </div>
-        
+    </div>
 
-        <div>
-            <h2 class="title">What I do</h2>
-            <ul>
-                <li>Endless school work</li>
-                <li>Badminton :D</li>
-                <li>Eating</li>
-            </ul>
-        </div>
+    <img id="christmas-tree" src="image/ChristmasTree.png" alt="Christmas Tree" class="xmas-element">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const snowContainer = document.getElementById('snow-container');
+            const body = document.body;
+            const maxSnowflakes = 12; 
+            let currentSnowflakes = 0;
 
-        <div>
-            <h2 class="title">Featured Projects</h2>
-            <ul>
-                <li>
-                    Check out: <span id="apps"><a href="https://changkevin51.github.io/TowerDefense/" target="_blank">Awesome (and challenging) Tower Defense Game</a></span>
-                </li>
-                <li>
-                    Check out: <span id="apps"><a href="https://changkevin51.pythonanywhere.com/" target="_blank">Trivia App (Flask)</a></span>
-                </li>
-                <li>
-                    Check out: <span id="apps"><a href="https://github.com/changkevin51/Object-Detection-app" target="_blank">Object Detection App</a></span>
-                </li>
-            </ul>
-        </div>     
-        <img id="christmas-tree" src="image/ChristmasTree.png" alt="Christmas Tree" class="xmas-element">
-        <script>
-            document.getElementById('theme-switch').addEventListener('click', function () {
-                const arrow = document.getElementById('arrow');
-                if (arrow) {
-                    arrow.style.transition = 'opacity 0.5s ease-out';
-                    arrow.style.opacity = '0';
-                    setTimeout(() => {
-                        arrow.style.display = 'none'; 
-                    }, 500);
+            const createSnowflake = () => {
+                if (currentSnowflakes >= maxSnowflakes || !body.classList.contains('xmas-mode')) return;
+
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.textContent = '❄';
+
+                snowflake.style.left = `${Math.random() * 100}vw`;
+
+                const size = Math.random() * 10 + 10; 
+                snowflake.style.width = `${size}px`;
+                snowflake.style.height = `${size}px`;
+
+                const duration = Math.random() * 5 + 3; 
+                snowflake.style.animationDuration = `${duration}s`;
+
+                snowflake.style.color = getComputedStyle(body).getPropertyValue('--snowflake-color');
+
+                snowContainer.appendChild(snowflake);
+                currentSnowflakes++;
+
+                snowflake.addEventListener('animationend', () => {
+                    snowflake.remove();
+                    currentSnowflakes--;
+                });
+            };
+
+            // Christmas mode snow
+            let snowInterval;
+            
+            function startSnow() {
+                if (!snowInterval) {
+                    snowInterval = setInterval(createSnowflake, 500);
+                }
+            }
+            
+            function stopSnow() {
+                clearInterval(snowInterval);
+                snowInterval = null;
+                document.querySelectorAll('.snowflake').forEach(flake => flake.remove());
+                currentSnowflakes = 0;
+            }
+            
+            document.addEventListener('xmasModeChange', (e) => {
+                if (e.detail.active) {
+                    startSnow();
+                } else {
+                    stopSnow();
                 }
             });
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const snowContainer = document.getElementById('snow-container');
-                const body = document.body;
-                const maxSnowflakes = 12; 
-                let currentSnowflakes = 0;
-
-                const createSnowflake = () => {
-                    if (currentSnowflakes >= maxSnowflakes || !body.classList.contains('xmas-mode')) return;
-
-                    const snowflake = document.createElement('div');
-                    snowflake.className = 'snowflake';
-                    snowflake.textContent = '❄';
-
-                    snowflake.style.left = `${Math.random() * 100}vw`;
-
-                    const size = Math.random() * 10 + 10; 
-                    snowflake.style.width = `${size}px`;
-                    snowflake.style.height = `${size}px`;
-
-                    const duration = Math.random() * 5 + 3; 
-                    snowflake.style.animationDuration = `${duration}s`;
-
-                    snowflake.style.color = getComputedStyle(body).getPropertyValue('--snowflake-color');
-
-                    snowContainer.appendChild(snowflake);
-                    currentSnowflakes++;
-
-                    snowflake.addEventListener('animationend', () => {
-                        snowflake.remove();
-                        currentSnowflakes--;
-                    });
-                };
-
-                // chistmas mode
-                let snowInterval;
-                
-                function startSnow() {
-                    if (!snowInterval) {
-                        snowInterval = setInterval(createSnowflake, 500);
-                    }
-                }
-                
-                function stopSnow() {
-                    clearInterval(snowInterval);
-                    snowInterval = null;
-                    document.querySelectorAll('.snowflake').forEach(flake => flake.remove());
-                    currentSnowflakes = 0;
-                }
-                
-                document.addEventListener('xmasModeChange', (e) => {
-                    if (e.detail.active) {
-                        startSnow();
-                    } else {
-                        stopSnow();
-                    }
-                });
-
-                document.getElementById('theme-switch').addEventListener('click', () => {
-                    document.querySelectorAll('.snowflake').forEach(snowflake => {
-                        snowflake.style.color = getComputedStyle(body).getPropertyValue('--snowflake-color');
-                    });
-                });
-            });
-        </script>        
-    </body>
+        });
+    </script>
+</body>
 </html>

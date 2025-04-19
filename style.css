@@ -3,7 +3,7 @@
     --text-color: #414042;
     --link-color: #3aafa9;
     --accent: #d4d4d4;
-    --snowflake-color: black; /* Default color */
+    --snowflake-color: black; 
     --xmas-accent: #ff5151;
 }
 
@@ -227,7 +227,7 @@ img {
     align-items: center;
     font-family: "Questrial", sans-serif;
     color: var(--text-color);
-    z-index: 1000; /* Ensure it stays above other elements */
+    z-index: 1000; 
     animation: fade-in 1.5s ease-out;
 }
 
