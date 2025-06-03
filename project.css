@@ -129,7 +129,8 @@
 header #theme-switch,
 header #xmas-switch {
     position: fixed;
-    top: 20px;     background-color: var(--accent);
+    top: 80px;  
+    background-color: var(--accent);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -150,7 +151,7 @@ header #xmas-switch {
 
 #return-home-btn {
     position: fixed;
-    top: 20px; 
+    top: 80px;    
     left: 20px; 
     background-color: var(--accent);
     border-radius: 50%;
@@ -161,15 +162,28 @@ header #xmas-switch {
     justify-content: center;
     cursor: pointer;
     border: none; 
-    text-decoration: none; }
-
-#return-home-btn svg {
-    fill: var(--text-color);
+    text-decoration: none; 
 }
 
-header #theme-switch svg,
-header #xmas-switch svg {
-    fill: var(--text-color);
+#return-home-btn svg {
+    fill: #222 !important; /* Dark color for light mode */
+}
+
+body.darkmode #return-home-btn svg {
+    fill: #E8EAED !important; /* Light color for dark mode */
+}
+
+#xmas-arrow {
+    position: fixed;
+    top: 80px;     /* Increased from 10px to 30px */
+    right: 73px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Questrial", sans-serif;
+    color: var(--text-color);
+    z-index: 1000;
+    animation: fade-in 1.5s ease-out;
 }
 
 body.darkmode .project-card {

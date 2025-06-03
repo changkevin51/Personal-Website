@@ -25,8 +25,8 @@
     <!-- SCRIPTS -->
     <script type="text/javascript" src="./scripts/darkmode.js" defer></script>
     <script type="text/javascript" src="./scripts/textshuffle.js" defer></script>
-    <script type="text/javascript" src="./scripts/imageshuffle.js" defer></script>
     <script type="text/javascript" src="./scripts/xmasmode.js" defer></script>
+    <script type="text/javascript" src="./scripts/pagetransition.js" defer></script>
 
     <style>
         body.dark-mode a {
@@ -34,7 +34,7 @@
         }
     </style>
 </head>
-<body>
+<body class="page-enter">
     <img src="image/ChristmasLights.png" alt="Christmas Lights Divider" class="section-divider xmas-element">
 
     <div id="snow-container" class="xmas-element"></div>
@@ -55,8 +55,7 @@
         </div>
     </header>
     
-
-    <div class="middle-column">
+    <div class="middle-column page-content">
         <div class="middle-column">
         </div>
         <div class="pfp">
@@ -169,6 +168,7 @@
                         snowflake.style.color = getComputedStyle(body).getPropertyValue('--snowflake-color');
                     });
                 });
+
             });
         </script>        
     </body>

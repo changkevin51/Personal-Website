@@ -34,6 +34,7 @@
 body {
     background-color: var(--bgc);
     background: var(—bgc);
+    transition: opacity 0.5s ease-in-out; 
     
 }
 
@@ -149,7 +150,7 @@ h2.title {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 50px;
+    top: 80px;
     right: 50px;
     cursor: pointer;
 }
@@ -165,7 +166,7 @@ h2.title {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 50px;
+    top: 80px;
     right: 110px;
     cursor: pointer;
 }
@@ -356,4 +357,41 @@ body.darkmode a:hover {
     height: auto; 
     z-index: 1000; 
     pointer-events: none; 
+}
+
+/* Page Transition Animations */
+@keyframes pageFadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pageFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-leave {
+  animation: pageFadeOutUp 0.5s ease-out forwards;
+}
+
+.page-enter {
+  /* Content starts transparent and slightly offset, animation brings it in */
+  animation: pageFadeInDown 0.5s ease-in forwards;
+}
+
+.page-content {
+  /* Ensure the page content container takes full height */
+  min-height: 100vh;
 }

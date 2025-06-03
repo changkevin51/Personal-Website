@@ -22,14 +22,15 @@
     <!-- SCRIPTS -->
     <script type="text/javascript" src="./scripts/darkmode.js" defer></script>
     <script type="text/javascript" src="./scripts/xmasmode.js" defer></script>
+    <script type="text/javascript" src="./scripts/pagetransition.js" defer></script>
 
     <style>
         body.dark-mode a {
-            color: #ADD8E6; 
+            color: #2ba8d1; 
         }
     </style>
 </head>
-<body>
+<body class="page-enter">
     <img src="image/ChristmasLights.png" alt="Christmas Lights Divider" class="section-divider xmas-element">
     <div id="snow-container" class="xmas-element"></div>
     <header>
@@ -52,11 +53,10 @@
         </svg>
         </a>
         <div id="xmas-arrow" style="display: none;">
-            <!-- Content for xmas-arrow if any, managed by JS or CSS -->
         </div>
     </header>
 
-    <div class="main-content-projects">
+    <div class="main-content-projects page-content">
         <h1>My Projects</h1>
         <div class="projects-grid">
             <!-- Project 1: TurretFall -->
