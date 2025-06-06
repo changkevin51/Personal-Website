@@ -359,7 +359,135 @@ body.darkmode a:hover {
     pointer-events: none; 
 }
 
-/* Page Transition Animations */
+#weather-time-widget {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: var(--accent);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Maven Pro", sans-serif;
+    color: var(--text-color);
+    min-width: 200px;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.darkmode #weather-time-widget {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#time-display {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.time-label {
+    font-size: 12px;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+#current-time {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    font-family: "Questrial", sans-serif;
+}
+
+#weather-info {
+    border-top: 1px solid #666;
+    padding-top: 12px;
+}
+
+.darkmode #weather-info {
+    border-top-color: #999;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.weather-icon {
+    font-size: 24px;
+    filter: grayscale(1);
+    opacity: 0.8;
+}
+
+.temperature {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.weather-details {
+    text-align: center;
+}
+
+.weather-description {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+}
+
+.weather-extra {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-color);
+    opacity: 0.6;
+    gap: 12px;
+}
+
+.weather-extra span {
+    flex: 1;
+    text-align: center;
+}
+
+.weather-loading, .weather-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-align: center;
+}
+
+.weather-error span:first-child {
+    font-size: 18px;
+    filter: grayscale(1);
+}
+
+@media (max-width: 768px) {
+    #weather-time-widget {
+        top: 10px;
+        left: 10px;
+        padding: 12px;
+        min-width: 180px;
+    }
+    
+    #current-time {
+        font-size: 16px;
+    }
+    
+    .temperature {
+        font-size: 18px;
+    }
+}
+
 @keyframes pageFadeOutUp {
   from {
     opacity: 1;
@@ -387,11 +515,193 @@ body.darkmode a:hover {
 }
 
 .page-enter {
-  /* Content starts transparent and slightly offset, animation brings it in */
   animation: pageFadeInDown 0.5s ease-in forwards;
 }
 
 .page-content {
-  /* Ensure the page content container takes full height */
   min-height: 100vh;
+}
+
+#weather-time-widget {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: var(--accent);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Maven Pro", sans-serif;
+    color: var(--text-color);
+    min-width: 200px;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: default;
+}
+
+#weather-time-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.darkmode #weather-time-widget {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode #weather-time-widget:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Tooltip */
+#weather-time-widget::after {
+    content: "Time and Weather in Ottawa";
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bgc);
+    color: var(--text-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--accent);
+    z-index: 1001;
+}
+
+#weather-time-widget::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--bgc);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1001;
+}
+
+#weather-time-widget:hover::after,
+#weather-time-widget:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+#time-display {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.time-label {
+    font-size: 12px;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+#current-time {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    font-family: "Questrial", sans-serif;
+}
+
+#weather-info {
+    border-top: 1px solid #666;
+    padding-top: 12px;
+}
+
+.darkmode #weather-info {
+    border-top-color: #999;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.weather-icon {
+    font-size: 24px;
+    filter: grayscale(1);
+    opacity: 0.8;
+}
+
+.temperature {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.weather-details {
+    text-align: center;
+}
+
+.weather-description {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+}
+
+.weather-extra {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-color);
+    opacity: 0.6;
+    gap: 12px;
+}
+
+.weather-extra span {
+    flex: 1;
+    text-align: center;
+}
+
+.weather-loading, .weather-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-align: center;
+}
+
+.weather-error span:first-child {
+    font-size: 18px;
+    filter: grayscale(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #weather-time-widget {
+        top: 10px;
+        left: 10px;
+        padding: 12px;
+        min-width: 180px;
+    }
+    
+    #current-time {
+        font-size: 16px;
+    }
+    
+    .temperature {
+        font-size: 18px;
+    }
 }
