@@ -20,6 +20,10 @@
     font-style: normal;
 }
 
+html, body {
+    overflow: hidden;
+}
+
 #pfp {
     width: 115px; 
     height: 115px; 
@@ -28,14 +32,12 @@
     border-radius: 50%;
     margin-top: -45px;
     box-shadow: 0 0 10px #006400, 0 0 20px #ff0000;
-    
 }
 
 body {
     background-color: var(--bgc);
     background: var(—bgc);
     transition: opacity 0.5s ease-in-out; 
-    
 }
 
 .links-container a {
@@ -78,6 +80,7 @@ body.darkmode h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: -30px;
 }
 
 .middle-column div {
@@ -124,7 +127,8 @@ li {
 }
 
 h2.title {
-    margin-top: 0px;
+    margin-top: -5px;
+    margin-bottom: -5px;
 }
 
 .footer {
@@ -262,7 +266,6 @@ img {
     margin-top: -2px;
 }
 
-/* Fade-in animation for the arrow */
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -306,7 +309,6 @@ body.darkmode a:hover {
     height: 100vh;
     pointer-events: none; 
     z-index: 1000;
-    overflow: hidden;
 }
 
 .snowflake {
@@ -551,7 +553,6 @@ body.darkmode a:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Custom Tooltip */
 #weather-time-widget::after {
     content: "Time and Weather in Ottawa";
     position: absolute;
@@ -688,20 +689,241 @@ body.darkmode a:hover {
     filter: grayscale(1);
 }
 
-/* Responsive adjustments */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 700;
+}
+
+.contact-description {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-family: "Questrial", sans-serif;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.contact-form {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.form-group.focused .form-label {
+    color: var(--link-color);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    background-color: var(--bgc);
+    color: var(--text-color);
+    font-family: "Questrial", sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 3px rgba(58, 175, 169, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+.form-submit {
+    width: 100%;
+    margin-left: 10px;
+    padding: 14px 20px;
+    background-color: var(--link-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+}
+
+.form-submit:hover:not(:disabled) {
+    background-color: #309a96;
+    transform: translateY(-2px);
+}
+
+.form-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-loading {
+    display: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.form-status {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 500;
+    position: relative;
+    left: -25px; 
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.darkmode .success-message {
+    background-color: #1e3d32;
+    color: #d4edda;
+    border-color: #155724;
+}
+
+.darkmode .error-message {
+    background-color: #3d1a1e;
+    color: #f8d7da;
+    border-color: #721c24;
+}
+
+.home-button {
+    background-color: var(--accent);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    gap: 5px;
+    font-size: 12px;
+    flex-direction: column;
+}
+
+.home-button:hover {
+    background-color: var(--link-color);
+    color: white;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.home-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.home-button span {
+    font-size: 8px;
+    margin-top: -2px;
+}
+
+body.xmas-mode .form-input:focus,
+body.xmas-mode .form-textarea:focus {
+    border-color: var(--xmas-accent);
+    box-shadow: 0 0 0 3px rgba(255, 81, 81, 0.1);
+}
+
+body.xmas-mode .form-group.focused .form-label {
+    color: var(--xmas-accent);
+}
+
+body.xmas-mode .form-submit {
+    background-color: var(--xmas-accent);
+}
+
+body.xmas-mode .form-submit:hover:not(:disabled) {
+    background-color: #e84545;
+}
+
 @media (max-width: 768px) {
-    #weather-time-widget {
+    .contact-container {
+        padding: 20px 15px;
+    }
+    
+    .contact-title {
+        font-size: 2em;
+    }
+    
+    .home-button {
         top: 10px;
         left: 10px;
-        padding: 12px;
-        min-width: 180px;
+        width: 45px;
+        height: 45px;
     }
     
-    #current-time {
-        font-size: 16px;
+    .home-button svg {
+        width: 18px;
+        height: 18px;
     }
     
-    .temperature {
-        font-size: 18px;
+    .home-button span {
+        font-size: 7px;
     }
 }
