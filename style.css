@@ -23,7 +23,7 @@
 }
 
 html, body {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #pfp {
@@ -75,6 +75,13 @@ body.darkmode {
 
 body.darkmode h1 {
     color: #E8EAED;
+}
+
+body.projects-page {
+    display: block !important;
+    height: auto !important;
+    margin-top: 0 !important;
+    grid-template-columns: unset !important;
 }
 
 .middle-column {
